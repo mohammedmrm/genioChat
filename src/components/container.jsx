@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ChatBox from "./chatBox";
 import { Transition } from "semantic-ui-react";
 const Container = () => {
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
-  const [msgs1, setMsgs1] = useState([]);
-  const [msgs2, setMsgs2] = useState([]);
+  var [msgs1, setMsgs1] = useState([]);
+  var [msgs2, setMsgs2] = useState([]);
   const [typing1, setTyping1] = useState(false);
   const [typing2, setTyping2] = useState(false);
   const handleSend = (e, id) => {
@@ -74,24 +74,32 @@ const Container = () => {
       setTyping2(true);
       setTimeout(() => {
         setTyping2(false);
-      }, 3000);
+      }, 10000);
     } else {
       setTyping1(true);
       setTimeout(() => {
         setTyping1(false);
-      }, 3000);
+      }, 10000);
     }
   };
   const handleSeen = (msgs) => {
     console.log(msgs);
   };
-  const handleClick = (id) => {};
+  const handleClick = (id) => {
+    console.log("Message to be deleted", id);
+  };
+  const onEmojiClick = (emoji, id) => {
+    console.log(emoji.target.innerText, id);
+    id === 1
+      ? setText1(text1 + emoji.target.innerText)
+      : setText2(text2 + emoji.target.innerText);
+  };
   const handlelike = (id, emoji) => {
     console.log(emoji, id);
     let objIndex = msgs1.findIndex((obj) => obj.id === id);
     msgs1[objIndex].like = emoji;
     setMsgs1(msgs1);
-    
+
     let objIndex2 = msgs2.findIndex((obj) => obj.id === id);
     msgs2[objIndex2].like = emoji;
     setMsgs2(msgs2);
@@ -105,6 +113,7 @@ const Container = () => {
         text={text1}
         handleSeen={handleSeen}
         handleClick={handleClick}
+        onEmojiClick={(emoji) => onEmojiClick(emoji, 1)}
         handlelike={handlelike}
         handleSend={(event) => handleSend(event, 1)}
         handleChange={(event) => handleChange(event, 1)}
@@ -114,6 +123,7 @@ const Container = () => {
         typing={typing2}
         text={text2}
         handleClick={handleClick}
+        onEmojiClick={(emoji) => onEmojiClick(emoji, 2)}
         handlelike={handlelike}
         handleSeen={handleSeen}
         handleSend={(event) => handleSend(event, 2)}

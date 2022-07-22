@@ -65,6 +65,8 @@ height: 700px;
 .emoji {
     cursor: pointer;
     margin: 1px;
+    display: inline-block;
+    font-size: 20px;
 }
 .emoji:hover {
     background-color: #a7acb1;
@@ -205,6 +207,8 @@ textarea {
 
 .media-chat .media-body p {
     position: relative;
+    display: block;
+    width: fit-content;
     padding: 6px 8px;
     margin: 4px 0;
     background-color: #a7acb1;
@@ -271,7 +275,7 @@ textarea {
 }
 
 .media-chat {
-    text-align: right;
+    text-align: left;
     margin-bottom: 0;
 }
 
@@ -279,6 +283,10 @@ textarea {
    display: inline-block;
     width: auto;
     max-width: 80%;
+}
+.media-chat-normal p{
+        margin-left: auto !important;
+        margin-right: 0 !important;
 }
 .media-chat.media-chat-reverse .media-body p {
     float: left;

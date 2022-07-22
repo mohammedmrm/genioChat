@@ -10,13 +10,13 @@ export default function ChatBox({
   handlelike,
   handleClick,
   handleSeen,
+  onEmojiClick,
   msgs,
   inputValue,
   text,
   typing,
 }) {
   const [show, setShow] = useState(true);
-  const [Pop, setPop] = useState(false);
   const [seen, setSeen] = useState(msgs.filter((x) => !x.seen).length);
   var newMsgs = msgs;
   const handleToggle = () => {
@@ -42,7 +42,9 @@ export default function ChatBox({
     >
       <Transition visible={show} animation="scale" duration={500}>
         <div className="chatBox-container">
-          {typing && <Label pointing="left">Peer is typing ...</Label>}
+          {typing && (
+            <Label style={{ position: "absolute" }}>Peer is typing ...</Label>
+          )}
           <div className="chat-box">
             {msgs.map((msg) => (
               <div
@@ -51,56 +53,14 @@ export default function ChatBox({
                 }
                 key={msg.id}
               >
-                <div
-                  onMouseOver={(Pop) => setPop(true)}
-                  onMouseLeave={(Pop) => setPop(false)}
-                  className="col-10"
-                  onClick={() => handleClick(msg.id)}
-                >
-                  <Popup
-                    style={{ position: "relative" }}
-                    open={msg.sendby == "s" && Pop}
-                    position={
-                      msg.sendby == "p" ? "left center" : "right center"
-                    }
-                    trigger={
-                      <Message
-                        id={msg.id}
-                        text={msg.text + msg.like}
-                        sendby={msg.sendby}
-                        dt={msg.dt}
-                      ></Message>
-                    }
-                  >
-                    {msg.sendby == "s" && (
-                      <Popup.Content>
-                        <div
-                          className="emoji"
-                          onClick={() => handlelike(msg.id, "😏")}
-                        >
-                          😏
-                        </div>
-                        <div
-                          className="emoji"
-                          onClick={() => handlelike(msg.id, "👍")}
-                        >
-                          👍
-                        </div>
-                        <div
-                          className="emoji"
-                          onClick={() => handlelike(msg.id, "😍")}
-                        >
-                          😍
-                        </div>
-                        <div
-                          className="emoji"
-                          onClick={() => handlelike(msg.id, "😆")}
-                        >
-                          😆
-                        </div>
-                      </Popup.Content>
-                    )}
-                  </Popup>
+                <div className="col-10" onClick={() => handleClick(msg.id)}>
+                  <Message
+                    handlelike={handlelike}
+                    id={msg.id}
+                    text={msg.text + msg.like}
+                    sendby={msg.sendby}
+                    dt={msg.dt}
+                  ></Message>
                 </div>
               </div>
             ))}
@@ -109,6 +69,7 @@ export default function ChatBox({
             text={text}
             inputValue={inputValue}
             handleSend={handleSend}
+            onEmojiClick={onEmojiClick}
             handleChange={handleChange}
           />
         </div>

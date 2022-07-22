@@ -1,9 +1,8 @@
-import React from "react";
-import { Message as Msg } from "semantic-ui-react";
-const Message = ({ text, dt, sendby, id }) => {
-  const onClick = (e, id) => {
-    console.log(e, id);
-  };
+import React, { useState } from "react";
+import { Popup } from "semantic-ui-react";
+import Moment from "react-moment";
+const Message = ({ text, dt, sendby, id, handlelike }) => {
+  //const [Pop, setPop] = useState(false);
   return (
     <div
       className={
@@ -13,9 +12,35 @@ const Message = ({ text, dt, sendby, id }) => {
       }
     >
       <div className="media-body">
-        <p>{text}</p>
+        <Popup
+          flowing
+          hoverable
+          position={sendby == "p" ? "left center" : "right center"}
+          trigger={<p>{text}</p>}
+        >
+          {sendby == "s" && (
+            <Popup.Content>
+              <div className="emoji" onClick={() => handlelike(id, "😏")}>
+                😏
+              </div>
+              <div className="emoji" onClick={() => handlelike(id, "👍")}>
+                👍
+              </div>
+              <div className="emoji" onClick={() => handlelike(id, "😍")}>
+                😍
+              </div>
+              <div className="emoji" onClick={() => handlelike(id, "😆")}>
+                😆
+              </div>
+            </Popup.Content>
+          )}
+        </Popup>
         <p className="meta">
-          <time>{dt}</time>
+          <time>
+            <Moment interval={30000} fromNow>
+              {dt}
+            </Moment>
+          </time>
         </p>
       </div>
     </div>

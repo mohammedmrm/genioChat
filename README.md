@@ -26,7 +26,18 @@ A simple web based application developed using React.js. The App consists of mul
 
 ## Some Screenshots of the App
 
+### chat window
+
 ![alt text](https://github.com/mohammedmrm/genioChat/blob/main/Doc/normal.PNG)
+
+### hide one chat box and show its unseen message number
+
 ![alt text](https://github.com/mohammedmrm/genioChat/blob/main/Doc/hiddenbox.PNG)
+
+### Popup of emoji that can be add to the text of the message
+
 ![alt text](https://github.com/mohammedmrm/genioChat/blob/main/Doc/emoji.png)
+
+### Popup for The reaction on messages
+
 ![alt text](https://github.com/mohammedmrm/genioChat/blob/main/Doc/reaction.png)

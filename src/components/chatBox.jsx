@@ -17,7 +17,7 @@ export default function ChatBox({
   unseen,
 }) {
   const [show, setShow] = useState(true);
-  //const [seen, setSeen] = useState(unseen);
+  const [scroll, setScroll] = useState(0);
   var newMsgs = msgs;
   const handleToggle = () => {
     console.log("unseen messsages: ", msgs.filter((x) => !x.seen).length);
@@ -26,10 +26,14 @@ export default function ChatBox({
       newMsgs = msgs.map((obj) => {
         return { ...obj, seen: true };
       });
-      //setSeen(msgs.filter((x) => !x.seen).length);
     } else {
       setShow(true);
     }
+  };
+
+  const handleScroll = (e) => {
+    e.target.scrollTop = e.target.scrollHeight;
+    setScroll(e.target.scrollHeight);
   };
   return (
     <div
@@ -45,7 +49,7 @@ export default function ChatBox({
           {typing && (
             <Label style={{ position: "absolute" }}>Peer is typing ...</Label>
           )}
-          <div className="chat-box">
+          <div className="chat-box" scroll={scroll} onMouseMove={handleScroll}>
             {msgs.map((msg) => (
               <div
                 className={

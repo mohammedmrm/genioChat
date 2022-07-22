@@ -87,6 +87,15 @@ const Container = () => {
   };
   const handleClick = (id) => {
     console.log("Message to be deleted", id);
+    if (window.confirm("Delete this message?")) {
+      let objIndex = msgs1.findIndex((obj) => obj.id === id);
+      msgs1[objIndex].text = "Message Deleted";
+      setMsgs1(msgs1);
+
+      let objIndex2 = msgs2.findIndex((obj) => obj.id === id);
+      msgs2[objIndex2].text = "Message Deleted";
+      setMsgs2(msgs2);
+    }
   };
   const onEmojiClick = (emoji, id) => {
     console.log(emoji.target.innerText, id);
@@ -103,7 +112,6 @@ const Container = () => {
     let objIndex2 = msgs2.findIndex((obj) => obj.id === id);
     msgs2[objIndex2].like = emoji;
     setMsgs2(msgs2);
-    console.log(msgs1[objIndex]);
   };
   return (
     <div className="chat-container">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Popup } from "semantic-ui-react";
 import Moment from "react-moment";
-const Message = ({ text, dt, sendby, id, handlelike }) => {
+const Message = ({ text, dt, sendby, id, handlelike, handleClick }) => {
   //const [Pop, setPop] = useState(false);
   return (
     <div
@@ -16,21 +16,24 @@ const Message = ({ text, dt, sendby, id, handlelike }) => {
           flowing
           hoverable
           position={sendby == "p" ? "left center" : "right center"}
-          trigger={<p>{text}</p>}
+          trigger={<p onDoubleClick={() => handleClick(id)}>{text}</p>}
         >
           {sendby == "s" && (
             <Popup.Content>
-              <div className="emoji" onClick={() => handlelike(id, "😏")}>
-                😏
-              </div>
               <div className="emoji" onClick={() => handlelike(id, "👍")}>
                 👍
+              </div>
+              <div className="emoji" onClick={() => handlelike(id, "👍")}>
+                😀
+              </div>
+              <div className="emoji" onClick={() => handlelike(id, "😏")}>
+                😏
               </div>
               <div className="emoji" onClick={() => handlelike(id, "😍")}>
                 😍
               </div>
               <div className="emoji" onClick={() => handlelike(id, "😆")}>
-                😆
+                😡
               </div>
             </Popup.Content>
           )}

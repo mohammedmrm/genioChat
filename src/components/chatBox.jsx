@@ -53,9 +53,10 @@ export default function ChatBox({
                 }
                 key={msg.id}
               >
-                <div className="col-10" onClick={() => handleClick(msg.id)}>
+                <div className="col-10">
                   <Message
                     handlelike={handlelike}
+                    handleClick={handleClick}
                     id={msg.id}
                     text={msg.text + msg.like}
                     sendby={msg.sendby}

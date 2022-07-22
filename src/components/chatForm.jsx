@@ -62,9 +62,6 @@ const ChatForm = ({ handleChange, handleSend, text, onEmojiClick }) => {
                   🤣
                 </div>
                 <div className="emoji" onClick={onEmojiClick}>
-                  ☺️
-                </div>
-                <div className="emoji" onClick={onEmojiClick}>
                   😊
                 </div>
                 <div className="emoji" onClick={onEmojiClick}>

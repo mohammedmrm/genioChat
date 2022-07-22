@@ -62,14 +62,18 @@ height: 700px;
     font-size: 16px;
 }
 .reaction {
-    display: block;
-    padding: 2px;
-    background-color: #ff0000;
+    display: inline-block;
+    background-color: #ebebeb;
+    border-radius: 10px;
+    margin: 0px 5px;
 }
-
+.deleted {
+    font-size: 16px;
+    color: crimson;
+}
 .emoji {
     cursor: pointer;
-    margin: 1px;
+    margin: 2px;
     display: inline-block;
     font-size: 20px;
 }
@@ -213,6 +217,15 @@ textarea {
 .media-chat .media-body p {
     position: relative;
     display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+        /* Safari */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* IE10+/Edge */
+        user-select: none;
+        /* Standard */
     width: fit-content;
     padding: 6px 8px;
     margin: 4px 0;
@@ -222,9 +235,7 @@ textarea {
     color: #272626;
 }
 
-.media>* {
-    margin: 0 8px;
-}
+
 
 .media-chat .media-body p.meta {
     background-color: transparent !important;

@@ -15,9 +15,10 @@ export default function ChatBox({
   inputValue,
   text,
   typing,
+  unseen,
 }) {
   const [show, setShow] = useState(true);
-  const [seen, setSeen] = useState(msgs.filter((x) => !x.seen).length);
+  const [seen, setSeen] = useState(unseen);
   var newMsgs = msgs;
   const handleToggle = () => {
     console.log("unseen messsages: ", msgs.filter((x) => !x.seen).length);
@@ -81,7 +82,7 @@ export default function ChatBox({
           color="red"
           circular
         >
-          {seen}
+          {unseen}
         </Label>
       </Transition>
       <button

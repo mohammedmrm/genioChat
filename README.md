@@ -8,7 +8,7 @@ A simple web based application developed using React.js. The App consists of mul
 
 ## Functionalities of the App
 
-- Chat alignment of messages depends on how is the sender and how the Reciver. This was implemented based on specific value in the messages array “sendby”.
+- Chat alignment of messages depends on who is the sender and who the Reciver. This was implemented based on specific value in the messages array “sendby”.
 
 - Human Friendly Datetime. This was done using “npm package” called “react-moment”.
 

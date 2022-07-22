@@ -47,9 +47,7 @@ export default function ChatBox({
             {msgs.map((msg) => (
               <div
                 className={
-                  msg.sendby === "p"
-                    ? "row chat-msg chat-reverse"
-                    : "row chat-msg"
+                  msg.sendby === "p" ? " chat-msg chat-reverse" : " chat-msg"
                 }
                 key={msg.id}
               >
@@ -61,39 +59,49 @@ export default function ChatBox({
                 >
                   <Popup
                     style={{ position: "relative" }}
-                    open={Pop}
-                    position="top left"
+                    open={msg.sendby == "s" && Pop}
+                    position={
+                      msg.sendby == "p" ? "left center" : "right center"
+                    }
                     trigger={
                       <Message
                         id={msg.id}
-                        text={msg.text}
+                        text={msg.text + msg.like}
                         sendby={msg.sendby}
                         dt={msg.dt}
                       ></Message>
                     }
                   >
-                    <Popup.Header>User Rating</Popup.Header>
-                    <Popup.Content>
-                      <span >Some content</span>
-                    </Popup.Content>
+                    {msg.sendby == "s" && (
+                      <Popup.Content>
+                        <div
+                          className="emoji"
+                          onClick={() => handlelike(msg.id, "😏")}
+                        >
+                          😏
+                        </div>
+                        <div
+                          className="emoji"
+                          onClick={() => handlelike(msg.id, "👍")}
+                        >
+                          👍
+                        </div>
+                        <div
+                          className="emoji"
+                          onClick={() => handlelike(msg.id, "😍")}
+                        >
+                          😍
+                        </div>
+                        <div
+                          className="emoji"
+                          onClick={() => handlelike(msg.id, "😆")}
+                        >
+                          😆
+                        </div>
+                      </Popup.Content>
+                    )}
                   </Popup>
                 </div>
-
-                {msg.like ? (
-                  <div
-                    className="col-2 chat-like"
-                    onClick={() => handlelike(false, msg.id)}
-                  >
-                    <BsHeartFill />
-                  </div>
-                ) : (
-                  <div
-                    className="col-2 chat-like"
-                    
-                  >
-                    <BsHeart />
-                  </div>
-                )}
               </div>
             ))}
           </div>

@@ -10,6 +10,7 @@
 .chat-box{
 height: 500px;
 width: 100%;
+padding-top: 20px;
 overflow-y: auto;
 text-align: right;
 }
@@ -58,6 +59,15 @@ height: 700px;
     background-color: #5bad6b;
     border: none;
     font-size: 16px;
+}
+
+
+.emoji {
+    cursor: pointer;
+    margin: 1px;
+}
+.emoji:hover {
+    background-color: #a7acb1;
 }
 .card-bordered {
     border: 1px solid #ebebeb;
@@ -225,8 +235,7 @@ textarea {
 }
 
 .media {
-    padding: 16px 12px;
-    padding-top: 20px;
+    padding: 0px 12px;
     -webkit-transition: background-color .2s linear;
     transition: background-color .2s linear;
 }

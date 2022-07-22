@@ -18,6 +18,7 @@ const Container = () => {
         id: id,
         sendby: "p",
         seen: true,
+        like: "",
       };
       setTyping1(false);
       setMsgs1([...msgs1, Selfmsgobj]);
@@ -27,7 +28,7 @@ const Container = () => {
         id: id,
         sendby: "s",
         seen: false,
-        like: false,
+        like: "",
       };
       setTyping2(false);
       setMsgs2([...msgs2, msgobj]);
@@ -42,7 +43,7 @@ const Container = () => {
         id: id,
         sendby: "p",
         seen: true,
-        like: false,
+        like: "",
       };
       setMsgs2([...msgs2, Selfmsgobj2]);
       setTyping1(false);
@@ -54,7 +55,7 @@ const Container = () => {
         id: id,
         sendby: "s",
         seen: false,
-        like: false,
+        like: "",
       };
       setMsgs1([...msgs1, msgobj]);
       console.log("msg1:", msgs1);
@@ -85,13 +86,14 @@ const Container = () => {
     console.log(msgs);
   };
   const handleClick = (id) => {};
-  const handlelike = (like, id) => {
-    console.log(like, id);
+  const handlelike = (id, emoji) => {
+    console.log(emoji, id);
     let objIndex = msgs1.findIndex((obj) => obj.id === id);
-    msgs1[objIndex].like = like;
+    msgs1[objIndex].like = emoji;
     setMsgs1(msgs1);
+    
     let objIndex2 = msgs2.findIndex((obj) => obj.id === id);
-    msgs2[objIndex2].like = like;
+    msgs2[objIndex2].like = emoji;
     setMsgs2(msgs2);
     console.log(msgs1[objIndex]);
   };

@@ -3,7 +3,6 @@ import { Popup } from "semantic-ui-react";
 import Moment from "react-moment";
 import parse from "html-react-parser";
 const Message = ({ text, dt, sendby, id, handlelike, handleClick }) => {
-  //const [Pop, setPop] = useState(false);
   return (
     <div
       className={

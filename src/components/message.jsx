@@ -1,5 +1,5 @@
 import React from "react";
-import { Dropdown, Button, Icon } from "semantic-ui-react";
+import { Message as Msg } from "semantic-ui-react";
 const Message = ({ text, dt, sendby, id }) => {
   const onClick = (e, id) => {
     console.log(e, id);
@@ -13,11 +13,7 @@ const Message = ({ text, dt, sendby, id }) => {
       }
     >
       <div className="media-body">
-        <Dropdown text={text} Icon="">
-          <Dropdown.Menu>
-            <Dropdown.Item text="Delete" />
-          </Dropdown.Menu>
-        </Dropdown>
+        <p>{text}</p>
         <p className="meta">
           <time>{dt}</time>
         </p>

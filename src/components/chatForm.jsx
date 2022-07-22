@@ -40,7 +40,7 @@ const ChatForm = ({ handleChange, handleSend, text }) => {
                 top: "-300px",
               }}
               native
-              onEmojiClick={onEmojiClick}
+              //onEmojiClick={onEmojiClick}
               groupNames={{
                 smileys_people: "yellow faces",
                 animals_nature: "cute dogs and also trees",

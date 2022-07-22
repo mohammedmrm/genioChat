@@ -13,6 +13,12 @@ width: 100%;
 overflow-y: auto;
 text-align: right;
 }
+.chat-msg div {
+    float: left;
+}
+.chat-reverse div{
+    float: right !important;
+}
 .typing {
     position: absolute;
     display: block;

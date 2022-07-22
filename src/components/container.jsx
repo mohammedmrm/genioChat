@@ -81,6 +81,9 @@ const Container = () => {
       }, 3000);
     }
   };
+  const handleSeen = (msgs) => {
+    console.log(msgs);
+  };
   const handleClick = (id) => {};
   const handlelike = (like, id) => {
     console.log(like, id);
@@ -98,11 +101,7 @@ const Container = () => {
       <ChatBox
         typing={typing1}
         text={text1}
-        handleSeen={() => {
-          msgs1.map((obj) => {
-            return { ...obj, seen: true };
-          });
-        }}
+        handleSeen={handleSeen}
         handleClick={handleClick}
         handlelike={handlelike}
         handleSend={(event) => handleSend(event, 1)}
@@ -114,11 +113,7 @@ const Container = () => {
         text={text2}
         handleClick={handleClick}
         handlelike={handlelike}
-        handleSeen={() => {
-          msgs2.map((obj) => {
-            return { ...obj, seen: true };
-          });
-        }}
+        handleSeen={handleSeen}
         handleSend={(event) => handleSend(event, 2)}
         handleChange={(event) => handleChange(event, 2)}
         msgs={msgs2}

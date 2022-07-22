@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import ChatForm from "./chatForm";
 import Message from "./message";
-import { BsXLg, BsChevronDoubleUp, BsHeartFill, BsHeart } from "react-icons/bs";
-import { Popup, Label, Transition } from "semantic-ui-react";
+import { Label, Transition, Icon } from "semantic-ui-react";
 export default function ChatBox({
   handleSend,
   handleChange,
@@ -18,7 +17,7 @@ export default function ChatBox({
   unseen,
 }) {
   const [show, setShow] = useState(true);
-  const [seen, setSeen] = useState(unseen);
+  //const [seen, setSeen] = useState(unseen);
   var newMsgs = msgs;
   const handleToggle = () => {
     console.log("unseen messsages: ", msgs.filter((x) => !x.seen).length);
@@ -27,7 +26,7 @@ export default function ChatBox({
       newMsgs = msgs.map((obj) => {
         return { ...obj, seen: true };
       });
-      setSeen(msgs.filter((x) => !x.seen).length);
+      //setSeen(msgs.filter((x) => !x.seen).length);
     } else {
       setShow(true);
     }
@@ -93,7 +92,11 @@ export default function ChatBox({
         }}
         className={show ? "bt-close" : "bt-open"}
       >
-        {show ? <BsXLg /> : <BsChevronDoubleUp />}
+        {show ? (
+          <Icon name="close" size="large" fitted />
+        ) : (
+          <Icon name="eye" size="large" fitted />
+        )}
       </button>
     </div>
   );

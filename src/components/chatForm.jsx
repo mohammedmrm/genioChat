@@ -1,15 +1,10 @@
-import React, { useState } from "react";
-import {
-  BsChevronDoubleUp,
-  BsFillEmojiSmileFill,
-  BsZoomIn,
-} from "react-icons/bs";
-import { Popup } from "semantic-ui-react";
+import React from "react";
+import { Popup, Icon } from "semantic-ui-react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./style.css";
 const ChatForm = ({ handleChange, handleSend, text, onEmojiClick }) => {
   const handleKeyUp = (e) => {
-    if (e.key == "Enter") {
+    if (e.key === "Enter") {
       handleSend();
     }
   };
@@ -31,8 +26,8 @@ const ChatForm = ({ handleChange, handleSend, text, onEmojiClick }) => {
               size="small"
               position={"top center"}
               trigger={
-                <a className="publisher-btn" href="#">
-                  <BsFillEmojiSmileFill></BsFillEmojiSmileFill>
+                <a className="publisher-btn" href="#nowhere">
+                  <Icon name="smile outline" />
                 </a>
               }
             >
@@ -375,12 +370,12 @@ const ChatForm = ({ handleChange, handleSend, text, onEmojiClick }) => {
           </div>
           <a
             className="publisher-btn text-info"
-            href="#"
+            href="#nowhere"
             onClick={() => {
               text !== "" ? handleSend() : console.log("No");
             }}
           >
-            <BsChevronDoubleUp></BsChevronDoubleUp>
+            <Icon name="send" />
           </a>
         </div>
       </div>

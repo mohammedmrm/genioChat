@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ChatBox from "./chatBox";
-import { Transition } from "semantic-ui-react";
 const Container = () => {
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
@@ -103,7 +102,7 @@ const Container = () => {
   };
   const handleSeen = (id) => {
     console.log("set messages seen ", id);
-    if (id == 1) {
+    if (id === 1) {
       msgs1 = msgs1.map((obj) => {
         return { ...obj, seen: true };
       });
@@ -187,14 +186,6 @@ const Container = () => {
     </div>
   );
 };
-function alredyNotTyping(msgs) {
-  var x = true;
-  msgs.find((msg) => {
-    x = msg.id === "x" ? false : true;
-    console.log("alredyNotTyping ", x);
-  });
-  return x;
-}
 
 function padTo2Digits(num) {
   return num.toString().padStart(2, "0");

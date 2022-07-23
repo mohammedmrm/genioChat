@@ -38,7 +38,7 @@ npm start
 
 ## Mockup
 
-![alt text](https://github.com/mohammedmrm/genioChat/blob/main/Doc/mockup.png)
+<img src="https://github.com/mohammedmrm/genioChat/blob/main/Doc/mockup.png" width="600px" style="margin: auto;"/>
 
 ## Functionalities of the App
 

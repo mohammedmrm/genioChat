@@ -18,7 +18,7 @@ cd genioChat
 npm install
 ```
 
-> ## **`#ff0000` NOTE IMPORTANT Please Delete the extra `;` in `./node_modules/semantic-ui-css/semantic.min.css` and in `./node_modules/semantic-ui-css/semantic.css`**
+> ## **NOTE IMPORTANT** Please Delete the extra `;` in `./node_modules/semantic-ui-css/semantic.min.css` and in `./node_modules/semantic-ui-css/semantic.css`
 
 > Open each file and `ctrl+f` search for `;;` and replaced with `;` and save it.
 

@@ -158,7 +158,6 @@ const Container = () => {
   };
   return (
     <div className="chat-container">
-      <h2>Chat container</h2>
       <ChatBox
         unseen={unseen1}
         typing={typing1}

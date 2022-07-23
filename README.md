@@ -2,7 +2,7 @@
 
 A simple web based application developed using React.js. The App consists of multi components which are nested together to produce single page app.
 
-### Instlation
+### Installation
 
 It is required that you have already instlled `Node.js` and `React.js`
 
@@ -18,7 +18,8 @@ cd genioChat
 npm install
 ```
 
- ## ![#f03c15](https://via.placeholder.com/15/f03c15/f03c15.png)  **NOTE IMPORTANT** 
+## ![#f03c15](https://via.placeholder.com/15/f03c15/f03c15.png) **NOTE IMPORTANT**
+
 > Please Delete the extra `;` in `./node_modules/semantic-ui-css/semantic.min.css` and in `./node_modules/semantic-ui-css/semantic.css`
 
 > Open each file and `ctrl+f` search for `;;` and replaced with `;` and save it.
@@ -34,6 +35,10 @@ npm start
 ### The hierarchy of the Components
 
 ![alt text](https://github.com/mohammedmrm/genioChat/blob/main/Doc/Components.drawio.png)
+
+## Mockup
+
+![alt text](https://github.com/mohammedmrm/genioChat/blob/main/Doc/mockup.png)
 
 ## Functionalities of the App
 

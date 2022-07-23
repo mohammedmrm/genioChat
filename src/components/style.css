@@ -1,5 +1,6 @@
 .chat-container {
   height: 650px;
+  padding-top: 20px;
 }
 .chatBox-container {
   padding: 10px;

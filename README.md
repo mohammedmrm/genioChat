@@ -8,13 +8,26 @@ It is required that you have already instlled `Node.js` and `React.js`
 
 ```
 git clone https://github.com/mohammedmrm/genioChat.git
+```
 
+```
 cd genioChat
+```
 
+```
 npm install
+```
 
+NOTE IMPORTANT Please Delete the extra `;` in `./node_modules/semantic-ui-css/semantic.min.css` and in `./node_modules/semantic-ui-css/semantic.css`
+
+open each file and `ctrl+f` search for `;;` and replaced with `;` and save it
+
+This is a bug in `semantic-ui-css`
+
+Next you can start the App
+
+```
 npm start
-
 ```
 
 ### The hierarchy of the Components

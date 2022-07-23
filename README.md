@@ -2,6 +2,21 @@
 
 A simple web based application developed using React.js. The App consists of multi components which are nested together to produce single page app.
 
+### Instlation
+
+It is required that you have already instlled `Node.js` and `React.js`
+
+```
+git clone https://github.com/mohammedmrm/genioChat.git
+
+cd genioChat
+
+npm install
+
+npm start
+
+```
+
 ### The hierarchy of the Components
 
 ![alt text](https://github.com/mohammedmrm/genioChat/blob/main/Doc/Components.drawio.png)

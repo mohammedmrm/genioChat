@@ -1,7 +1,6 @@
 import React from "react";
 import { Popup } from "semantic-ui-react";
 import Moment from "react-moment";
-import "moment/locale/it";
 import parse from "html-react-parser";
 const Message = ({ text, dt, sendby, id, handlelike, handleClick }) => {
   return (
@@ -41,7 +40,7 @@ const Message = ({ text, dt, sendby, id, handlelike, handleClick }) => {
         </Popup>
         <p className="meta">
           <time>
-            <Moment interval={30000} fromNow>
+            <Moment locale="it" interval={30000} fromNow>
               {dt}
             </Moment>
           </time>

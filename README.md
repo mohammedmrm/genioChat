@@ -1,8 +1,8 @@
-# GenioChat
+# Genio Chat
 
 A simple web based application developed using React.js. The App consists of multi components which are nested together to produce single page app.
 
-### Installation
+## Installation
 
 It is required that you have already instlled `Node.js` and `React.js`
 
@@ -38,7 +38,7 @@ npm start
 
 ## Mockup
 
-<img src="https://github.com/mohammedmrm/genioChat/blob/main/Doc/mockup.png" width="600px" style="margin: auto;"/>
+<p align="center"><img src="https://github.com/mohammedmrm/genioChat/blob/main/Doc/mockup.png" width="600px"/></p>
 
 ## Functionalities of the App
 

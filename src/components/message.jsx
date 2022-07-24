@@ -2,6 +2,7 @@ import React from "react";
 import { Popup } from "semantic-ui-react";
 import Moment from "react-moment";
 import parse from "html-react-parser";
+import "moment/locale/it";
 const Message = ({ text, dt, sendby, id, handlelike, handleClick }) => {
   return (
     <div
